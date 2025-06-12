@@ -72,7 +72,7 @@ export function FloatingDock() {
       iconMagnification={60}
       iconDistance={100}
       direction="bottom"
-      className="fixed bottom-0 m-0 mb-2 self-center p-2"
+      className="fixed bottom-0 z-10 m-0 mb-2 self-center p-2"
     >
       {floatingData.map((item) => (
         <DockIcon
