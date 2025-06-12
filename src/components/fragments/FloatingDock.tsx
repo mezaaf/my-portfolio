@@ -9,7 +9,6 @@ import {
   Home,
   Mail,
   Moon,
-  PencilRuler,
   Sun,
   User2,
 } from "lucide-react";
@@ -35,11 +34,6 @@ export function FloatingDock() {
       title: "Resume",
       icon: <BriefcaseBusiness />,
       href: "#resume",
-    },
-    {
-      title: "Skill",
-      icon: <PencilRuler />,
-      href: "#skill",
     },
     {
       title: "Projects",
@@ -72,7 +66,7 @@ export function FloatingDock() {
       iconMagnification={60}
       iconDistance={100}
       direction="bottom"
-      className="fixed bottom-0 z-10 m-0 mb-2 self-center p-2"
+      className="fixed bottom-0 z-99 m-0 mb-2 self-center p-2"
     >
       {floatingData.map((item) => (
         <DockIcon
@@ -102,7 +96,7 @@ export function FloatingDock() {
                     <Sun />
                   </TooltipTrigger>
                   <TooltipContent className="mb-5">
-                    <p>{item.title}</p>
+                    <p>Switch To Light Mode</p>
                   </TooltipContent>
                 </Tooltip>
               ) : (
@@ -114,7 +108,7 @@ export function FloatingDock() {
                     <Moon />
                   </TooltipTrigger>
                   <TooltipContent className="mb-5">
-                    <p>{item.title}</p>
+                    <p>Switch To Dark Mode</p>
                   </TooltipContent>
                 </Tooltip>
               )}
