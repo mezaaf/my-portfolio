@@ -11,7 +11,10 @@ export const PageContainer = forwardRef<
     <div className="flex h-full min-h-screen w-full flex-col">
       <main
         ref={ref}
-        className={cn("flex flex-1 flex-col", className)}
+        className={cn(
+          "flex flex-1 flex-col text-gray-800 dark:text-gray-100",
+          className,
+        )}
         {...props}
       >
         {children}

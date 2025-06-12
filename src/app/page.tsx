@@ -1,9 +1,9 @@
-import { SectionContainer } from "@/components/layouts/SectionContainer";
+import HeroSection from "@/components/hero/HeroSection";
 
 export default function HomePage() {
   return (
-    <SectionContainer padded>
-      <h1>Hello</h1>
-    </SectionContainer>
+    <>
+      <HeroSection />
+    </>
   );
 }
