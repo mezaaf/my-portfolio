@@ -1,7 +1,9 @@
+import { PageContainer } from "@/components/layouts/PageContanier";
+import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -9,17 +11,27 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-poppins-sans",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning className={`${poppins.className}`}>
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PageContainer>{children}</PageContainer>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
