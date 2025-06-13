@@ -7,7 +7,6 @@ const ProjectSection = () => {
   return (
     <SectionContainer
       padded
-      minFullscreen
       id="projects"
       className="flex w-full flex-col gap-4 pt-8 sm:gap-6 sm:pt-12 lg:gap-8 lg:pt-16"
     >
