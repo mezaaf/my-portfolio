@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { SectionContainer } from "../layouts/SectionContainer";
+import Lanyard from "../ui/Lanyard/Lanyard";
 
 const ResumeSection = () => {
   return (
@@ -19,7 +19,7 @@ const ResumeSection = () => {
           </h1>
         </div>
       </div>
-      <div className="flex flex-row gap-16 sm:gap-20 lg:gap-24">
+      <div className="relative grid grid-cols-1 flex-row lg:grid-cols-2 lg:gap-12">
         <div className="flex flex-col gap-2 lg:gap-3">
           <h1 className="text-lg font-semibold sm:text-xl lg:text-2xl">
             Code, Story, <span className="text-sky-400">and the After</span>
@@ -37,16 +37,8 @@ const ResumeSection = () => {
             {`What drives me is the joy of solving real-world problems through code. I'm excited to grow in this industry, connect with fellow developers, and contribute to meaningful digital products.`}
           </p>
         </div>
-        <div className="hidden lg:flex">
-          <div className="dark:shadow-accent aspect-square h-full w-full overflow-hidden rounded-xl shadow-xl">
-            <Image
-              src="/images/mezaaf.jpg"
-              alt="mezaaf"
-              width={1000}
-              height={1000}
-              className="aspect-square h-full w-full object-cover object-center"
-            />
-          </div>
+        <div className="hidden lg:-mt-48 lg:flex lg:w-3xl">
+          <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
         </div>
       </div>
     </SectionContainer>
