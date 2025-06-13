@@ -1,5 +1,6 @@
 import AboutSection from "@/components/about/AboutSection";
 import HeroSection from "@/components/hero/HeroSection";
+import ProjectSection from "@/components/projects/ProjectSection";
 import ResumeSection from "@/components/resume/ResumeSection";
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       {/* <TextScroll /> */}
       <AboutSection />
       <ResumeSection />
+      <ProjectSection />
     </div>
   );
 }
