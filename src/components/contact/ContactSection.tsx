@@ -7,8 +7,7 @@ const ContactSection = () => {
   return (
     <SectionContainer
       id="contact"
-      minFullscreen
-      className="w-full px-4 pt-8 sm:px-6 sm:pt-12 lg:grid lg:grid-cols-2 lg:px-0 lg:pt-16"
+      className="w-full px-4 py-8 sm:px-6 sm:py-12 lg:grid lg:grid-cols-2 lg:px-0 lg:py-16"
     >
       <div className="relative -mt-75 hidden w-full lg:grid lg:grid-cols-2">
         <div className="absolute w-full">

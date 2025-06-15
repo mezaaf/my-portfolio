@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils";
 import { forwardRef } from "react";
-import { FloatingDock } from "../fragments/FloatingDock";
 import Footer from "../fragments/Footer";
 export const PageContainer = forwardRef<
   HTMLElement,
@@ -20,7 +19,6 @@ export const PageContainer = forwardRef<
       >
         {children}
       </main>
-      <FloatingDock />
       <Footer />
     </div>
   );

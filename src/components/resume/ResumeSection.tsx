@@ -9,7 +9,7 @@ const ResumeSection = () => {
       className="flex w-full flex-col gap-4 pt-8 sm:gap-6 sm:pt-12 lg:gap-8 lg:pt-16"
     >
       <div className="relative grid grid-cols-1 gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-12">
-        <div className="flex flex-col gap-2 lg:gap-8">
+        <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
           <div className="relative flex">
             <h1 className="z-3 text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
               My Experience
@@ -50,7 +50,7 @@ const ResumeSection = () => {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col gap-2 lg:gap-8">
+        <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
           <div className="relative flex">
             <h1 className="z-3 text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
               My Education

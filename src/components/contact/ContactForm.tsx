@@ -1,6 +1,9 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Button } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -11,11 +14,11 @@ import {
   FormMessage,
 } from "../ui/form";
 import { Input } from "../ui/input";
-import { contactFormSchema, type ContactFormSchema } from "./forms/contact";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "../ui/textarea";
+import { contactFormSchema, type ContactFormSchema } from "./forms/contact";
 
 const ContactForm = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const form = useForm<ContactFormSchema>({
     defaultValues: {
       name: "",
@@ -25,8 +28,40 @@ const ContactForm = () => {
     resolver: zodResolver(contactFormSchema),
   });
 
-  const onContactSubmit = (values: ContactFormSchema) => {
-    console.log(values);
+  const onContactSubmit = async (values: ContactFormSchema) => {
+    setIsLoading(true);
+
+    try {
+      await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "5c017038-6a03-45b8-8923-eb409554797f",
+          name: values.name,
+          email: values.email,
+          message: values.message,
+        }),
+      })
+        .then(async (response) => {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          const json = await response.json();
+          setIsLoading(false);
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          console.log(json.message);
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          console.log(error);
+        });
+    } catch (error) {
+      console.log(error);
+      setIsLoading(false);
+    }
+
+    setIsLoading(false);
   };
   return (
     <Form {...form}>
@@ -84,6 +119,13 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
+        <Button
+          disabled={isLoading}
+          variant={"outline"}
+          className="cursor-pointer border-sky-400 hover:bg-sky-400 hover:text-gray-100 dark:border-sky-400 dark:hover:bg-sky-400"
+        >
+          {isLoading ? "Sending message..." : "Send"}
+        </Button>
       </form>
     </Form>
   );
