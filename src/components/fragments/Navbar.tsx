@@ -12,7 +12,7 @@ import {
 import { IconMailCode, IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@bprogress/next";
 import { useEffect, useState } from "react";
 
 export function NavbarDemo() {
@@ -56,7 +56,7 @@ export function NavbarDemo() {
           <div className="z-99 flex items-center gap-4">
             <IconMailCode
               className="cursor-pointer stroke-sky-400"
-              onClick={() => router.push("#contact")}
+              onClick={() => router.push("/#contact")}
             />
             {theme === "dark" ? (
               <IconSun
