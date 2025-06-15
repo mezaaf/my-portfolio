@@ -9,7 +9,7 @@ const HeroSection = () => {
       <SectionContainer
         id="home"
         padded
-        className="z-1 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 sm:py-12 lg:gap-8 lg:py-16"
+        className="z-1 grid grid-cols-1 gap-4 py-12 sm:grid-cols-2 sm:gap-6 sm:py-16 lg:gap-8 lg:py-20"
       >
         <div className="flex w-full max-w-3xl flex-col space-y-4 sm:space-y-6 lg:space-y-8 lg:py-24">
           <h1 className="text-center text-lg font-semibold sm:text-start sm:text-xl lg:text-2xl">

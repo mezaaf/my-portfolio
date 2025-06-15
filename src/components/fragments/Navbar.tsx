@@ -1,20 +1,19 @@
 "use client";
 import {
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
   Navbar,
+  NavbarLogo,
   NavBody,
   NavItems,
-  MobileNav,
-  NavbarLogo,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
 import { IconMailCode, IconMoon, IconSun } from "@tabler/icons-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export function NavbarDemo() {
   const navItems = [
@@ -97,19 +96,31 @@ export function NavbarDemo() {
                 <span className="block">{item.name}</span>
               </Link>
             ))}
-            <div className="flex w-full flex-col gap-4">
-              <Button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full"
-              >
-                Login
-              </Button>
-              <Button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full"
-              >
-                Book a call
-              </Button>
+            <div className="z-99 flex items-center gap-4">
+              <IconMailCode
+                className="cursor-pointer stroke-sky-400"
+                onClick={() => {
+                  router.push("#contact");
+                  setIsMobileMenuOpen(false);
+                }}
+              />
+              {theme === "dark" ? (
+                <IconSun
+                  className="cursor-pointer stroke-sky-400"
+                  onClick={() => {
+                    setTheme("light");
+                    setIsMobileMenuOpen(false);
+                  }}
+                />
+              ) : (
+                <IconMoon
+                  className="cursor-pointer stroke-sky-400"
+                  onClick={() => {
+                    setTheme("dark");
+                    setIsMobileMenuOpen(false);
+                  }}
+                />
+              )}
             </div>
           </MobileNavMenu>
         </MobileNav>
