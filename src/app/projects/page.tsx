@@ -32,7 +32,7 @@ const ProjectsPage = async () => {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
         {projects.map((project) => (
           <Card key={project.id} className="p-0 pb-5">
             <CardHeader className="p-0">
