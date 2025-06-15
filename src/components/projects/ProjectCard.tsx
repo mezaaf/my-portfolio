@@ -18,8 +18,8 @@ type ProjectCardProps = {
 const ProjectCard = (props: ProjectCardProps) => {
   return (
     <Card className="w-full overflow-hidden rounded-3xl p-0">
-      <CardContent className="grid grid-cols-1 p-0 sm:grid-cols-2">
-        <div className="flex flex-col justify-between">
+      <CardContent className="flex flex-col-reverse items-center justify-between p-0 sm:flex-row">
+        <div className="flex flex-col justify-between sm:max-w-xl">
           <div className="flex w-full flex-col gap-4 p-4 sm:gap-6 sm:p-6 lg:gap-8 lg:p-8">
             <CardTitle className="text-xl font-bold text-gray-800 sm:text-2xl lg:text-3xl dark:text-gray-100">
               {props.title}
@@ -33,7 +33,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               ))}
             </ul>
           </div>
-          <div className="flex w-full gap-4 p-2 sm:gap-3 sm:p-6 lg:gap-4 lg:p-8">
+          <div className="flex w-full gap-4 p-4 sm:gap-3 sm:p-6 lg:gap-4 lg:p-8">
             {props.repoLink !== null ? (
               <Link href={props.repoLink ?? "#"} target="_blank">
                 <Button size={"sm"} className="cursor-pointer">
