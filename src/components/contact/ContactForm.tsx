@@ -121,8 +121,7 @@ const ContactForm = () => {
         />
         <Button
           disabled={isLoading}
-          variant={"outline"}
-          className="cursor-pointer border-sky-400 hover:bg-sky-400 hover:text-gray-100 dark:border-sky-400 dark:hover:bg-sky-400"
+          className="w-fit cursor-pointer border-sky-400 hover:bg-sky-400 hover:text-gray-100 dark:border-sky-400 dark:hover:bg-sky-400"
         >
           {isLoading ? "Sending message..." : "Send"}
         </Button>

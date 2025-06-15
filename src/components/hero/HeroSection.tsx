@@ -39,14 +39,17 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="flex h-full flex-row items-center justify-center">
-          <div className="h-48 w-48 overflow-hidden rounded-full border border-sky-400 shadow-lg sm:h-64 sm:w-64 lg:h-80 lg:w-80 lg:border-2">
-            <Image
-              src="/images/mezaaf.png"
-              alt="mezaaf"
-              height={1000}
-              width={1000}
-              className="h-full w-full object-cover object-center"
-            />
+          <div className="overflow-hidden rounded-full border border-sky-400 p-4 shadow-xl sm:p-6 lg:border-2 lg:p-8">
+            <div className="h-48 w-48 overflow-hidden rounded-full bg-gradient-to-b from-sky-200 via-15% to-sky-300 sm:h-64 sm:w-64 lg:h-80 lg:w-80">
+              <Image
+                src="/images/mezaaf.png"
+                alt="mezaaf"
+                height={1000}
+                width={1000}
+                className="mt-4 h-full w-full object-cover object-center grayscale-50 transition-all duration-300 ease-in-out hover:grayscale-0 sm:mt-6 lg:mt-8"
+                priority
+              />
+            </div>
           </div>
         </div>
       </SectionContainer>

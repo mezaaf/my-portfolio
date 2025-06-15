@@ -106,7 +106,7 @@ const AboutSection = () => {
     <SectionContainer
       id="about"
       padded
-      className="flex w-full flex-col gap-4 sm:gap-6 lg:gap-8"
+      className="flex w-full flex-col gap-4 pt-8 sm:gap-6 sm:pt-12 lg:gap-8 lg:pt-16"
     >
       <div className="relative flex flex-col">
         <h1 className="z-1 text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
