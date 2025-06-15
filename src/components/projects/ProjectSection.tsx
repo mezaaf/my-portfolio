@@ -1,14 +1,19 @@
+import { getFeaturedProjects } from "@/actions/server";
+import type { Project } from "@/types/project";
+import Link from "next/link";
 import { SectionContainer } from "../layouts/SectionContainer";
 import { Button } from "../ui/button";
 import ProjectCard from "./ProjectCard";
-import { projectDatas } from "./projectDatas";
 
-const ProjectSection = () => {
+const ProjectSection = async () => {
+  const result = await getFeaturedProjects();
+  const projects = result.data as Project[];
+
   return (
     <SectionContainer
       padded
       id="projects"
-      className="flex w-full flex-col gap-4 pt-8 sm:gap-6 sm:pt-12 lg:gap-8 lg:pt-16"
+      className="z-70 flex w-full flex-col gap-4 pt-8 sm:gap-6 sm:pt-12 lg:gap-8 lg:pt-16"
     >
       <div className="relative flex flex-col">
         <h1 className="z-1 text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
@@ -20,13 +25,15 @@ const ProjectSection = () => {
           </h1>
         </div>
       </div>
-      {projectDatas.map((item) => (
+      {projects?.map((item) => (
         <ProjectCard
           key={item.id}
           title={item.title}
-          description={item.description}
-          image={item.image}
-          link={item.link}
+          excerpt={item.excerpt}
+          slug={item.slug}
+          pictureUrl={item.pictureUrl}
+          webLink={item.webLink}
+          repoLink={item.repoLink}
           stack={item.stack}
         />
       ))}
@@ -34,7 +41,11 @@ const ProjectSection = () => {
         <h1 className="text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
           Other Projects
         </h1>
-        <Button variant={"outline"}>Load More</Button>
+        <Link href="/projects">
+          <Button variant={"outline"} className="cursor-pointer">
+            Load More
+          </Button>
+        </Link>
       </div>
     </SectionContainer>
   );

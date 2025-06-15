@@ -19,19 +19,19 @@ export function NavbarDemo() {
   const navItems = [
     {
       name: "Home",
-      link: "#home",
+      link: `/#home`,
     },
     {
       name: "About",
-      link: "#about",
+      link: "/#about",
     },
     {
       name: "Resume",
-      link: "#resume",
+      link: "/#resume",
     },
     {
       name: "Projects",
-      link: "#projects",
+      link: "/#projects",
     },
   ];
 

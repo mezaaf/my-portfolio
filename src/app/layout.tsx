@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Poppins } from "next/font/google";
+import BProgressProvider from "./BProgressProvider";
 
 export const metadata: Metadata = {
   title: "Mezaaf | Fullstack Developer",
@@ -29,7 +30,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <PageContainer>{children}</PageContainer>
+          <BProgressProvider>
+            <PageContainer>{children}</PageContainer>
+          </BProgressProvider>
         </ThemeProvider>
       </body>
     </html>

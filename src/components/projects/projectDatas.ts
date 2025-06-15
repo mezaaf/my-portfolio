@@ -3,33 +3,21 @@ export const projectDatas = [
     id: 1,
     title: "TARMU ONLINE",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium at ipsam tempore quo quasi dolore nostrum! Quaerat corrupti repellat, iure quos vel, consequuntur veniam voluptates quasi doloribus rerum deleniti cum!",
-    stack: [
-      {
-        id: 1.1,
-        name: "Next JS",
-      },
-      {
-        id: 1.2,
-        name: "Tailwind CSS",
-      },
-      {
-        id: 1.3,
-        name: "Shadcn/ui",
-      },
-      {
-        id: 1.4,
-        name: "Supabase",
-      },
-    ],
+      "A modern and responsive website built to represent Tarbiyatul Mutathowi'in Islamic Boarding School (Pondok Ngujur) online. It provides visitors with essential information about the pesantren's history, vision and mission, educational programs, facilities, admission process, and a collection of Islamic articles. Designed with accessibility and clarity in mind, the site serves as both an information hub for the public and a digital identity for the institution.",
+    excerpt:
+      "A modern and responsive website built to represent Tarbiyatul Mutathowi'in Islamic Boarding School (Pondok Ngujur) online.",
+    stack: ["Next JS", "Tailwind CSS", "Shadcn UI", "Supabase"],
     image: "/images/projects/tarmu-online.webp",
     link: "/",
+    createdAt: "2023-01-01",
   },
   {
     id: 2,
     title: "PPTM PSB",
     description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium at ipsam tempore quo quasi dolore nostrum! Quaerat corrupti repellat, iure quos vel, consequuntur veniam voluptates quasi doloribus rerum deleniti cum!",
+      "PPTM PSB is an online new student admission system built for the Tarbiyatul Mutathowi'in Islamic Boarding School (Pondok Ngujur), which is developed using modern web technology to streamline the new student registration process. Applicants can fill out forms, upload required documents, and view payment information directly through the platform, thereby increasing accessibility and administrative efficiency for the Islamic boarding school.",
+    excerpt:
+      "PPTM PSB is an online new student admission system built for the Tarbiyatul Mutathowi'in Islamic Boarding School (Pondok Ngujur)",
     stack: [
       {
         id: 2.1,
