@@ -34,16 +34,32 @@ const ProjectCard = (props: ProjectCardProps) => {
             </ul>
           </div>
           <div className="flex w-full gap-4 p-2 sm:gap-3 sm:p-6 lg:gap-4 lg:p-8">
-            <Link href={props.repoLink ?? "#"} target="_blank">
-              <Button size={"sm"} className="cursor-pointer">
-                <IconBrandGithub /> Repository
-              </Button>
-            </Link>
-            <Link href={props.webLink ?? "#"} target="_blank">
-              <Button size={"sm"} className="cursor-pointer">
-                <IconLink /> Visit Website
-              </Button>
-            </Link>
+            {props.repoLink !== null ? (
+              <Link href={props.repoLink ?? "#"} target="_blank">
+                <Button size={"sm"} className="cursor-pointer">
+                  <IconBrandGithub /> Repository
+                </Button>
+              </Link>
+            ) : (
+              <Link href="/projects">
+                <Button size={"sm"} className="cursor-pointer">
+                  <IconBrandGithub /> Repository
+                </Button>
+              </Link>
+            )}
+            {props.webLink !== null ? (
+              <Link href={props.webLink ?? "#"} target="_blank">
+                <Button size={"sm"} className="cursor-pointer">
+                  <IconLink /> Visit Site
+                </Button>
+              </Link>
+            ) : (
+              <Link href="/projects">
+                <Button size={"sm"} className="cursor-pointer">
+                  <IconLink /> Visit Site
+                </Button>
+              </Link>
+            )}
           </div>
         </div>
         <div>

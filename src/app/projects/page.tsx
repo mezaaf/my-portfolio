@@ -51,16 +51,32 @@ const ProjectsPage = async () => {
                 <CardDescription>{project.description}</CardDescription>
               </div>
               <div className="mt-1 flex w-full flex-row items-center justify-between sm:mt-2 lg:mt-3">
-                <Link href={project.repoLink ?? "#"} target="_blank">
-                  <Button size={"sm"} className="cursor-pointer">
-                    <IconBrandGithub /> Repository
-                  </Button>
-                </Link>
-                <Link href={project.webLink ?? "#"} target="_blank">
-                  <Button size={"sm"} className="cursor-pointer">
-                    <IconLink /> Visit Website
-                  </Button>
-                </Link>
+                {project.repoLink !== null ? (
+                  <Link href={project.repoLink ?? "#"} target="_blank">
+                    <Button size={"sm"} className="cursor-pointer">
+                      <IconBrandGithub /> Repository
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href="/projects">
+                    <Button size={"sm"} className="cursor-pointer">
+                      <IconBrandGithub /> Repository
+                    </Button>
+                  </Link>
+                )}
+                {project.webLink !== null ? (
+                  <Link href={project.webLink ?? "#"} target="_blank">
+                    <Button size={"sm"} className="cursor-pointer">
+                      <IconLink /> Visit Site
+                    </Button>
+                  </Link>
+                ) : (
+                  <Link href="/projects">
+                    <Button size={"sm"} className="cursor-pointer">
+                      <IconLink /> Visit Site
+                    </Button>
+                  </Link>
+                )}
               </div>
             </CardContent>
           </Card>

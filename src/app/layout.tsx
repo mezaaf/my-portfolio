@@ -1,10 +1,10 @@
 import { PageContainer } from "@/components/layouts/PageContanier";
+import BProgressProvider from "@/providers/BProgressProvider";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Poppins } from "next/font/google";
-import BProgressProvider from "./BProgressProvider";
 
 export const metadata: Metadata = {
   title: "Mezaaf | Fullstack Developer",
