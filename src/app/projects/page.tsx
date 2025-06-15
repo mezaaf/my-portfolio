@@ -17,6 +17,7 @@ const ProjectsPage = async () => {
   const result = await getAllProjects();
 
   const projects = result.data as Project[];
+
   return (
     <SectionContainer
       padded
@@ -38,31 +39,26 @@ const ProjectsPage = async () => {
             <CardHeader className="p-0">
               <Image
                 src={project.pictureUrl}
-                alt={project.slug}
+                alt={project.title}
                 width={1000}
                 height={1000}
                 priority
               />
             </CardHeader>
-            <CardContent className="flex flex-col gap-2 sm:gap-3 lg:gap-4">
-              <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.excerpt}</CardDescription>
-              <div className="flex items-center justify-between">
-                <div className="flex gap-2">
-                  <Link href={project.repoLink ?? "#"}>
-                    <Button size={"sm"} className="cursor-pointer">
-                      <IconBrandGithub />
-                    </Button>
-                  </Link>
-                  <Link href={project.webLink ?? "#"}>
-                    <Button size={"sm"} className="cursor-pointer">
-                      <IconLink />
-                    </Button>
-                  </Link>
-                </div>
-                <Link href={`/projects/${project.slug}`}>
+            <CardContent className="flex h-full flex-col items-center justify-between">
+              <div className="flex w-full flex-col gap-1 sm:gap-2 lg:gap-3">
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription>{project.description}</CardDescription>
+              </div>
+              <div className="mt-1 flex w-full flex-row items-center justify-between sm:mt-2 lg:mt-3">
+                <Link href={project.repoLink ?? "#"} target="_blank">
                   <Button size={"sm"} className="cursor-pointer">
-                    Detail
+                    <IconBrandGithub /> Repository
+                  </Button>
+                </Link>
+                <Link href={project.webLink ?? "#"} target="_blank">
+                  <Button size={"sm"} className="cursor-pointer">
+                    <IconLink /> Visit Website
                   </Button>
                 </Link>
               </div>

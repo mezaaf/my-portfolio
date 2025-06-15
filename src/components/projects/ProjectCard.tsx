@@ -4,11 +4,11 @@ import { Badge } from "../ui/badge";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { IconBrandGithub, IconLink } from "@tabler/icons-react";
 
 type ProjectCardProps = {
   title: string;
-  excerpt: string;
-  slug: string;
+  description: string;
   stack: string[];
   pictureUrl: string;
   webLink?: string;
@@ -25,7 +25,7 @@ const ProjectCard = (props: ProjectCardProps) => {
               {props.title}
             </CardTitle>
             <CardDescription className="text-sm sm:text-base lg:text-lg">
-              {props.excerpt}
+              {props.description}
             </CardDescription>
             <ul className="flex flex-wrap gap-2 text-xs sm:text-sm lg:text-base">
               {props.stack.map((item, index) => (
@@ -33,14 +33,15 @@ const ProjectCard = (props: ProjectCardProps) => {
               ))}
             </ul>
           </div>
-          <div className="flex w-full flex-col gap-4 p-4 sm:gap-6 sm:p-6 lg:gap-8 lg:p-8">
-            <Link href={`/projects/${props.slug}`}>
-              <Button
-                size={"sm"}
-                variant={"outline"}
-                className="w-fit cursor-pointer"
-              >
-                Detail
+          <div className="flex w-full gap-4 p-2 sm:gap-3 sm:p-6 lg:gap-4 lg:p-8">
+            <Link href={props.repoLink ?? "#"} target="_blank">
+              <Button size={"sm"} className="cursor-pointer">
+                <IconBrandGithub /> Repository
+              </Button>
+            </Link>
+            <Link href={props.webLink ?? "#"} target="_blank">
+              <Button size={"sm"} className="cursor-pointer">
+                <IconLink /> Visit Website
               </Button>
             </Link>
           </div>

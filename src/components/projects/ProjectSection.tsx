@@ -29,8 +29,7 @@ const ProjectSection = async () => {
         <ProjectCard
           key={item.id}
           title={item.title}
-          excerpt={item.excerpt}
-          slug={item.slug}
+          description={item.description}
           pictureUrl={item.pictureUrl}
           webLink={item.webLink}
           repoLink={item.repoLink}

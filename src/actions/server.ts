@@ -24,16 +24,3 @@ export async function getFeaturedProjects() {
   }
   return { status: true, message: "Success", data };
 }
-
-export async function getProjectBySlug(slug: string) {
-  const supabase = await createClient();
-
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("slug", slug);
-  if (error) {
-    return { status: false, message: error.message, data: null };
-  }
-  return { status: true, message: "Success", data };
-}
