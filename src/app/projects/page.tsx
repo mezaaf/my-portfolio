@@ -15,13 +15,12 @@ import Link from "next/link";
 
 const ProjectsPage = async () => {
   const result = await getAllProjects();
-
   const projects = result.data as Project[];
 
   return (
     <SectionContainer
       padded
-      className="w-full gap-4 py-8 sm:gap-6 sm:py-12 lg:gap-8 lg:py-20"
+      className="w-full gap-4 pt-20 pb-8 sm:gap-6 lg:gap-8 lg:pt-25 lg:pb-16"
     >
       <div className="relative flex flex-col">
         <h1 className="z-1 text-2xl font-bold text-sky-400 sm:text-3xl lg:text-4xl">
