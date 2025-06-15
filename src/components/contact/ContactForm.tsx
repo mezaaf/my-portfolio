@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import { Form, FormControl, FormField, FormItem } from "../ui/form";
@@ -26,7 +26,6 @@ const ContactForm = () => {
     },
   ];
 
-  const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [stepIndex, setStepIndex] = useState(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const form = useForm<ContactFormSchema>({
@@ -74,76 +73,7 @@ const ContactForm = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    const input = inputRefs.current[stepIndex];
-    input?.focus();
-  }, [stepIndex]);
-
   return (
-    // <Form {...form}>
-    //   <form
-    //     onSubmit={form.handleSubmit(onContactSubmit)}
-    //     className="flex flex-col gap-4 sm:gap-6 lg:gap-8"
-    //   >
-    //     <FormField
-    //       control={form.control}
-    //       name="name"
-    //       render={({ field }) => (
-    //         <FormItem>
-    //           <FormLabel>Name</FormLabel>
-    //           <FormControl>
-    //             <Input
-    //               {...field}
-    //               type="text"
-    //               placeholder="Enter your name..."
-    //             />
-    //           </FormControl>
-    //           <FormDescription />
-    //           <FormMessage />
-    //         </FormItem>
-    //       )}
-    //     />
-    //     <FormField
-    //       control={form.control}
-    //       name="email"
-    //       render={({ field }) => (
-    //         <FormItem>
-    //           <FormLabel>Email Address</FormLabel>
-    //           <FormControl>
-    //             <Input
-    //               {...field}
-    //               type="email"
-    //               placeholder="Enter your email address..."
-    //             />
-    //           </FormControl>
-    //           <FormDescription />
-    //           <FormMessage />
-    //         </FormItem>
-    //       )}
-    //     />
-    //     <FormField
-    //       control={form.control}
-    //       name="message"
-    //       render={({ field }) => (
-    //         <FormItem>
-    //           <FormLabel>Message</FormLabel>
-    //           <FormControl>
-    //             <Textarea {...field} placeholder="Enter your message here..." />
-    //           </FormControl>
-    //           <FormDescription />
-    //           <FormMessage />
-    //         </FormItem>
-    //       )}
-    //     />
-    //     <Button
-    //       disabled={isLoading}
-    //       className="w-fit cursor-pointer border-sky-400 hover:bg-sky-400 hover:text-gray-100 dark:border-sky-400 dark:hover:bg-sky-400"
-    //     >
-    //       {isLoading ? "Sending message..." : "Send"}
-    //     </Button>
-    //   </form>
-    // </Form>
-
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onContactSubmit)}
@@ -176,10 +106,6 @@ const ContactForm = () => {
                         <input
                           {...field}
                           type="text"
-                          ref={(el) => {
-                            field.ref(el);
-                            inputRefs.current[index] = el;
-                          }}
                           placeholder={step.placeholder}
                           autoComplete="off"
                           className={`mt-1 w-full border-none bg-transparent text-sm placeholder-gray-500 outline-none ${
