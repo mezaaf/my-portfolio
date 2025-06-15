@@ -100,7 +100,7 @@ export function NavbarDemo() {
               <IconMailCode
                 className="cursor-pointer stroke-sky-400"
                 onClick={() => {
-                  router.push("#contact");
+                  router.push("/#contact");
                   setIsMobileMenuOpen(false);
                 }}
               />
